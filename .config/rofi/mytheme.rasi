@@ -1,0 +1,50 @@
+/* Colors */
+*{
+    background: #000000;
+    foreground: #4f4f4f;
+    text: #ffffff;
+    hightlight: #6a8fbe
+}
+
+window {
+    width: 250px;
+    anchor:center;
+    location:center;
+    padding:5px;
+    children:[mainbox];
+}
+
+mainbox{
+    children:[inputbar,listview];
+    background:@background;
+    foreground:@foreground;
+}
+
+inputbar{
+    orientation:horizontal;
+    children:[prompt,entry];
+}
+
+prompt{
+    background-color:@background;
+    border-color:@foreground;
+    border: 3px;
+    placeholder:"Search";
+    content:"";
+}
+
+listview{
+    layout:vertical;
+    spacing: 5px;
+    lines: 7;
+}
+
+element{
+    padding: 2px 0 0 0;
+    hightlight: solid @hightlight;
+    
+}
+
+entry{
+    width:100px;
+}
