@@ -5,24 +5,29 @@
 set $mod Mod4
 
 #Font-Render
-font pango:FreeSans 10
+font pango: RobotoMono Nerd Font Mono 10
 
 #XDG-AutoStart
 exec --no-startup-id dex --autostart --environment i3
 
 # Screen-Lock
-bindsym $mod+l exec i3lock -n --image=/home/rix/Pictures/Wallpapers/wallpaper6.png
+bindsym $mod+l exec i3lock -n --image=$HOME/Pictures/Wallpapers/wallpaper2.png
 
 #Auto-Exec
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom
 exec_always easyeffects --gapplication-service
-exec_always --no-startup-id /home/rix/.fehbg
+exec_always --no-startup-id $HOME/.fehbg
+exec_always --no-startup-id blueman-applet
+exec --no-startup-id flameshot
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id autorandr -c --cycle --force
+exec_always --no-startup-id killall dunst && dunst &
 
 # Volume-Keybinds
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -33,8 +38,8 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Brightness-keybinds
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 #Floating-Key
 floating_modifier $mod
@@ -138,5 +143,5 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 for_window [class="^.*"] border pixel 0
-gaps outer 1
-gaps inner 1
+gaps outer 4
+gaps inner 4

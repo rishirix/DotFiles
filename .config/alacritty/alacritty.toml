@@ -2,8 +2,8 @@
 live_config_reload=true
 
 [window]
-opacity=0.85
-padding={x=10,y=10}
+opacity=0.7
+padding={x=5,y=5}
 decorations = "None"
 
 [scrolling]
@@ -11,8 +11,8 @@ history=10000
 multiplier=5
 
 [font]
-normal={family="Inconsolata Nerd Font Mono",style="bold"}
-size=10
+normal={family="MonaspiceNe Nerd Font Mono",style="Regular"}
+size=8
 
 [selection]
 save_to_clipboard=true
