@@ -9,8 +9,9 @@ application/x-extension-shtml=zen.desktop
 application/xhtml+xml=zen.desktop
 application/x-extension-xhtml=zen.desktop
 application/x-extension-xht=zen.desktop
-image/png=feh.desktop
+image/png=gpicview.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+application/pdf=zen.desktop
 
 [Added Associations]
 x-scheme-handler/http=zen.desktop;
@@ -23,5 +24,6 @@ application/x-extension-shtml=zen.desktop;
 application/xhtml+xml=zen.desktop;
 application/x-extension-xhtml=zen.desktop;
 application/x-extension-xht=zen.desktop;
-image/png=feh.desktop;org.xfce.ristretto.desktop;
+image/png=feh.desktop;org.xfce.ristretto.desktop;gpicview.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/pdf=zen.desktop;

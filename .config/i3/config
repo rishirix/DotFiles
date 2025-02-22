@@ -1,17 +1,16 @@
 # i3-Config by Rsx
-# https://github.com/rishibhargawa/dotfile-arch/.config/i3/config
 
 #MOD-KEY
 set $mod Mod4
 
 #Font-Render
-font pango: RobotoMono Nerd Font Mono 10
+font pango: Noto Sans 10
 
 #XDG-AutoStart
 exec --no-startup-id dex --autostart --environment i3
 
 # Screen-Lock
-bindsym $mod+l exec i3lock -n --image=$HOME/Pictures/Wallpapers/wallpaper2.png
+bindsym $mod+l exec i3lock -n --image=$HOME/Pictures/Wallpapers/wallhaven-zyl9qg_1920x1080.png
 
 #Auto-Exec
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -21,9 +20,10 @@ exec_always easyeffects --gapplication-service
 exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id blueman-applet
 exec --no-startup-id flameshot
-exec_always --no-startup-id nm-applet
+#exec_always --no-startup-id nm-applet
 exec_always --no-startup-id autorandr -c --cycle --force
 exec_always --no-startup-id killall dunst && dunst &
+exec_always --no-startup-id parcellite
 
 # Volume-Keybinds
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
@@ -51,6 +51,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 bindsym $mod+x exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+s exec flameshot gui --path $HOME/Pictures/screenshots/ --clipboard -r 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -142,6 +143,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class="^.*"] border pixel 0
-gaps outer 4
-gaps inner 4
+for_window [class="^.*"] border pixel 1
+gaps outer 2
+gaps inner 2
+
+# Focused window (active)
+client.focused #88C0D0 #88C0D0 #2E3440 #81A1C1
+
+# Unfocused window (inactive)
+client.unfocused #4C566A #4C566A #D8DEE9 #434C5E
+
+# Urgent window (needs attention)
+client.urgent #BF616A #BF616A #ECEFF4 #D08770
+
+# Placeholder (for hidden/unmapped windows)
+client.placeholder #3B4252 #3B4252 #D8DEE9 #3B4252
+

@@ -1,18 +1,19 @@
 [general]
+import = [
+"~/.config/alacritty/themes/themes/nord.toml"
+]
 live_config_reload=true
 
 [window]
-opacity=0.7
 padding={x=5,y=5}
 decorations = "None"
-
 [scrolling]
 history=10000
 multiplier=5
 
 [font]
-normal={family="MonaspiceNe Nerd Font Mono",style="Regular"}
-size=8
+normal={family="D2CodingLigature Nerd Font Mono",style="Bold"}
+size=10
 
 [selection]
 save_to_clipboard=true

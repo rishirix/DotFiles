@@ -15,7 +15,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 0
-    font = Inter 18pt Light 10
+    font = Inter 8
     line_height = 2
     markup = full
     format = "<b>%s</b>\n%b"
