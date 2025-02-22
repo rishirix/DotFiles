@@ -148,7 +148,7 @@ gaps outer 2
 gaps inner 2
 
 # Focused window (active)
-client.focused #88C0D0 #88C0D0 #2E3440 #81A1C1
+client.focused #595eab #595eab #2E3440 #595eab
 
 # Unfocused window (inactive)
 client.unfocused #4C566A #4C566A #D8DEE9 #434C5E
