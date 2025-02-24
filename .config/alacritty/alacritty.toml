@@ -12,7 +12,7 @@ history=10000
 multiplier=5
 
 [font]
-normal={family="Hack Nerd Font Mono",style="Bold"}
+normal={family="SF Mono",style="Medium"}
 size=8
 
 [selection]
