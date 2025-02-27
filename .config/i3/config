@@ -117,8 +117,8 @@ bindsym $mod+Shift+5 move container to workspace number $ws5
 #assign [class="chromium"] 2
 #assign [class="firefox"] 2
 #assign [class="Code"] 4
-#assign [class="Spotify"] 5
-#assign [class="easyeffects"] 5
+assign [class="Spotify"] 5
+assign [class="easyeffects"] 5
 
 # Reload-Config
 bindsym $mod+Shift+c reload
@@ -148,7 +148,7 @@ gaps outer 2
 gaps inner 2
 
 # Focused window (active)
-client.focused #595eab #595eab #2E3440 #595eab
+client.focused #6c1d2b #6c1d2b #2E3440 #6c1d2b 
 
 # Unfocused window (inactive)
 client.unfocused #4C566A #4C566A #D8DEE9 #434C5E
@@ -159,3 +159,7 @@ client.urgent #BF616A #BF616A #ECEFF4 #D08770
 # Placeholder (for hidden/unmapped windows)
 client.placeholder #3B4252 #3B4252 #D8DEE9 #3B4252
 
+
+# scratchpad
+bindsym $mod+m scratchpad show
+bindsym $mod+Shift+m move scratchpad

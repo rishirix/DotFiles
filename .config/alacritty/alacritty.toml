@@ -7,12 +7,14 @@ live_config_reload=true
 [window]
 padding={x=5,y=5}
 decorations = "None"
+opacity= 0.8
+
 [scrolling]
 history=10000
 multiplier=5
 
 [font]
-normal={family="SF Mono",style="Medium"}
+normal={family="RobotoMono",style="Medium"}
 size=8
 
 [selection]
