@@ -4,13 +4,13 @@
 set $mod Mod4
 
 #Font-Render
-font pango: Noto Sans 10
+font pango: GeistMono Nerd Font Propo 10
 
 #XDG-AutoStart
 exec --no-startup-id dex --autostart --environment i3
 
 # Screen-Lock
-bindsym $mod+l exec i3lock -n --image=$HOME/Pictures/Wallpapers/wallhaven-zyl9qg_1920x1080.png
+bindsym $mod+l exec i3lock -n --image=$HOME/Pictures/Wallpapers/wall1.png
 
 #Auto-Exec
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -20,7 +20,7 @@ exec_always easyeffects --gapplication-service
 exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id blueman-applet
 exec --no-startup-id flameshot
-#exec_always --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 exec_always --no-startup-id autorandr -c --cycle --force
 exec_always --no-startup-id killall dunst && dunst &
 exec_always --no-startup-id parcellite
@@ -143,9 +143,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class="^.*"] border pixel 1
-gaps outer 2
-gaps inner 2
+for_window [class="^.*"] border pixel 0
+gaps outer 3
+gaps inner 3
 
 # Focused window (active)
 client.focused #6c1d2b #6c1d2b #2E3440 #6c1d2b 
