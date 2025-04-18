@@ -10,7 +10,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'joshdick/onedark.vim'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
 colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
