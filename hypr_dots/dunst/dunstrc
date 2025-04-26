@@ -1,0 +1,31 @@
+[global]
+width = 400
+height = (0,300)
+offset = (7,7)
+
+separator_height = 2
+padding = 10
+
+frame_width = 2
+frame_color = "#ffffff"
+gap_size = 4
+
+separator_color = frame
+font = "Inter 18pt"
+line_height = 5
+
+format = "<u>%a</u>\n<b>%s</b>\n%b"
+enable_recursive_icon_lookup = false
+icon_theme = Papirus-Dark
+icon_position = left
+icon_corner_radius = 5
+
+min_icon_size = 48
+max_icon_size = 128
+
+corner_radius = 10
+corners = all
+
+background = "#363636"
+foreground = "#ffffff"
+timeout = 5
