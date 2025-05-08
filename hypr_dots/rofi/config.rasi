@@ -1,18 +1,18 @@
 * {
-    font: "Inter 24pt 12";
+    font: "RobotoCondensed Medium 10" ;
     g-spacing: 10px;
     g-margin: 0;
     b-color: #000000FF;
-    fg-color: #FFFFFFFF;
+    fg-color: rgb(224, 221, 215);
     fgp-color: #888888FF;
-    b-radius: 8px;
+    b-radius: 15px;
     g-padding: 8px;
-    hl-color: #FFFFFFFF;
+    hl-color: rgb(200, 199, 199);
     hlt-color: #000000FF;
     alt-color: #111111FF;
     wbg-color: #000000CC;
     w-border: 1px solid;
-    w-border-color: #FFFFFFFF;
+    w-border-color:rgb(255, 255, 255);
     w-padding: 12px;
 }
 
@@ -34,7 +34,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 500px;
+    width: 450px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;

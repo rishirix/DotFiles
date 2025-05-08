@@ -11,7 +11,7 @@ frame_color = "#ffffff"
 gap_size = 4
 
 separator_color = frame
-font = "Inter 18pt"
+font = "Roboto Condensed"
 line_height = 5
 
 format = "<u>%a</u>\n<b>%s</b>\n%b"
@@ -23,7 +23,7 @@ icon_corner_radius = 5
 min_icon_size = 48
 max_icon_size = 128
 
-corner_radius = 10
+corner_radius = 6
 corners = all
 
 background = "#363636"

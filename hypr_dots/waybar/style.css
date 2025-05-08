@@ -1,13 +1,14 @@
 * {
     border: none;
-    border-radius: 14px;
-    font-family: "Inter 18pt","FontAwesome";
-    font-size: 14px;
+    border-radius: 0px;
+    font-family: "Roboto Condensed","Symbols Nerd Font";
+    font-size: 12px;
+    font-weight: 600;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.400);
+    background-color: rgb(12,0,12);
     color: #ffffff;
 }
 
