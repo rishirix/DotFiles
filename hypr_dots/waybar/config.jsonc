@@ -35,6 +35,7 @@
         "format-charging": "󰂄 {capacity}% ",
         "format-plugged": " {capacity}% ",
         "format-alt": "{time}",
+	"interval" : 5,
         "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
     },
     "network": {

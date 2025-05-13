@@ -1,15 +1,14 @@
 * {
     border: none;
-    border-radius: 0px;
-    font-family: "Roboto Condensed","Symbols Nerd Font";
-    font-size: 12px;
-    font-weight: 600;
+    border-radius: 10px;
+    font-family: "IBM Plex Sans Medium","Symbols Nerd Font";
+    font-size: 16px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgb(12,0,12);
-    color: #ffffff;
+    background-color: rgb(46,52,64);
+    color: rgb(199, 233, 255);
 }
 
 #workspaces button {

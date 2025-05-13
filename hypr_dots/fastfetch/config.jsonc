@@ -7,7 +7,7 @@
   "display":{
 	  "separator":": ",
 	  "color": {
-		  "keys": "blue",
+		  "keys": "cyan",
 		  "title": "white"
 	  },
 	  "key": {

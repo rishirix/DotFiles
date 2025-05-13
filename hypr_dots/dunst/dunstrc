@@ -11,7 +11,7 @@ frame_color = "#ffffff"
 gap_size = 4
 
 separator_color = frame
-font = "Roboto Condensed"
+font = "IBM Plex Sans Semibold"
 line_height = 5
 
 format = "<u>%a</u>\n<b>%s</b>\n%b"
