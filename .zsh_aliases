@@ -1,8 +1,0 @@
-alias update='sudo pacman -Syyu'
-alias install-app='sudo pacman -S '
-alias uinstall-app='sudo pacman -R '
-alias fetch='fastfetch'
-alias confedit='vim .config'
-alias sysctl='sudo systemctl '
-alias disku='gdu /'
-alias setwall='feh --bg-scale '

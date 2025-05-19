@@ -15,4 +15,3 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 colorscheme onedark
-hi Normal guibg=NONE ctermbg=NONE
