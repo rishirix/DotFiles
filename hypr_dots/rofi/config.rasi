@@ -5,21 +5,21 @@
     b-color:rgb(3, 3, 3);
     fg-color:rgb(255, 255, 255);
     fgp-color: #888888FF;
-    b-radius: 0px;
+    b-radius: 10px;
     g-padding: 8px;
-    hl-color: #F24735;
+    hl-color: rgb(94,161,254);
     hlt-color: #000000FF;
     alt-color: #111111FF;
     wbg-color: #000000CC;
     w-border: 2px solid;
-    w-border-color: #F24735;
+    w-border-color: rgb(94,161,254);
     w-padding: 12px;
 }
 
 configuration {
     modi: "drun";
     show-icons: false;
-    display-drun: "->";
+    display-drun: "Start:";
 }
 
 listview {
