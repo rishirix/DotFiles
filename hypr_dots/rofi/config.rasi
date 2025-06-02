@@ -1,19 +1,19 @@
 * {
-    font: "Adwaita Sans 12" ;
-    g-spacing: 12px;
+    font: "SF Pro Display 15" ;
+    g-spacing: 22px;
     g-margin: 0;
-    b-color:rgb(3, 3, 3);
+    b-color:rgba(3,3,3,0.45);
     fg-color:rgb(255, 255, 255);
-    fgp-color: #888888FF;
-    b-radius: 10px;
-    g-padding: 8px;
-    hl-color: rgb(94,161,254);
+    fgp-color:rgb(0, 0, 0);
+    b-radius: 15px;
+    g-padding: 10px;
+    hl-color: rgb(255,255,255);
     hlt-color: #000000FF;
-    alt-color: #111111FF;
-    wbg-color: #000000CC;
+    alt-color:rgb(0, 0, 0);
+    wbg-color:rgb(0, 0, 0);
     w-border: 2px solid;
-    w-border-color: rgb(94,161,254);
-    w-padding: 12px;
+    w-border-color: rgb(255,255,255);
+    w-padding: 22px;
 }
 
 configuration {
@@ -23,7 +23,7 @@ configuration {
 }
 
 listview {
-    columns: 1;
+    columns: 2;
     lines: 7;
     fixed-height: true;
     fixed-columns: true;
@@ -34,7 +34,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 500px;
+    width: 700px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;

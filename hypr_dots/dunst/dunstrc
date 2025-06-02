@@ -7,11 +7,11 @@ separator_height = 2
 padding = 10
 
 frame_width = 2
-frame_color = "#5ea1fe"
+frame_color = "#ffffff"
 gap_size = 4
 
 separator_color = frame
-font = "Adwaita Sans"
+font = "SF Pro Text"
 line_height = 5
 
 format = "<b>%s</b>\n%b"

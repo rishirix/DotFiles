@@ -1,10 +1,10 @@
 {
     "position": "top",
     "width": 1920,
-    "height": 35,
-    "margin-top": 0,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "height": 30,
+    "margin-top": 3,
+    "modules-left": ["clock", "hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["tray","wireplumber","network","battery"],
 
     //Modules Configuration
@@ -23,8 +23,8 @@
         }
     },
     "clock": {
-        "format": "{:%I : %M  %p} ",
-        "format-alt": "{:%A,  %d-%m-%Y}",
+        "format": " {:%H:%M} ",
+        "format-alt": " {:%d-%m-%Y} ",
         "tooltip": false
     },
     "battery": {
@@ -43,17 +43,17 @@
         "format-disconnected": "",
         "tooltip": true,
         "tooltip-format": "{essid} {ipaddr}",
-        "on-click": "iwgtk"
+        "on-click-right": "iwgtk"
     },
     "wireplumber": {
         "format": "{icon}",
         "format-muted": "󰝟",
         "format-icons": ["󰕿","󰖀","󰕾"],
-        "on-click": "pwvucontrol",
+        "on-click-right": "pwvucontrol",
         "tooltip": true,
         "tooltip-format": "{volume}%"
     },
     "tray":{
-        "spacing": 5
+        "spacing": 10
     }
 }
