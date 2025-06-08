@@ -7,11 +7,11 @@ separator_height = 2
 padding = 10
 
 frame_width = 2
-frame_color = "#ffffff"
+frame_color = "#eeeeee"
 gap_size = 4
 
 separator_color = frame
-font = "SF Pro Text"
+font = "Inter 18pt"
 line_height = 5
 
 format = "<b>%s</b>\n%b"
@@ -26,6 +26,6 @@ max_icon_size = 128
 corner_radius = 10
 corners = all
 
-background = "#20202A"
+background = "#000000"
 foreground = "#ffffff"
 timeout = 5

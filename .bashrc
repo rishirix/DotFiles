@@ -11,4 +11,4 @@ alias grep='grep --color=auto'
 source $HOME/.aliases
 source /usr/share/bash-completion/bash_completion
 
-export PS1="\[\e[31m\]->\[\e[m\] "
+export PS1="\u@\h > "

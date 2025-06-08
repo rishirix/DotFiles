@@ -1,16 +1,16 @@
 * {
-    font: "SF Pro Display 15" ;
+    font: "Inter 18pt Medium 12" ;
     g-spacing: 22px;
     g-margin: 0;
-    b-color:rgba(3,3,3,0.45);
+    b-color:rgb(0, 0, 0);
     fg-color:rgb(255, 255, 255);
     fgp-color:rgb(0, 0, 0);
     b-radius: 15px;
     g-padding: 10px;
     hl-color: rgb(255,255,255);
-    hlt-color: #000000FF;
-    alt-color:rgb(0, 0, 0);
-    wbg-color:rgb(0, 0, 0);
+    hlt-color: rgb(0, 0, 0);
+    alt-color:rgba(0, 0, 0, 0);
+    wbg-color:rgba(37, 37, 37, 0.9);
     w-border: 2px solid;
     w-border-color: rgb(255,255,255);
     w-padding: 22px;
@@ -34,7 +34,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 700px;
+    width: 600px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
