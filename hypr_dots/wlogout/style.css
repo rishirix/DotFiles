@@ -8,23 +8,22 @@ window {
 }
 
 button {
-    border-radius: 10px;
+    	border-radius: 10px;
 	text-decoration-color: #000000;
-    color: #ffffff;
-	background-color: rgba(17, 6, 27, 0.926);
+    	color: #ffffff;
+	background-color: rgba(35, 35, 35, 0.926);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 25%;
+	background-size: 70px;
 	border: none;
 	margin: 0 10px;
-	padding: 0 8px;
-	font-family: "Inter 18pt";
-	font-weight: bold;
-	font-size: 20px;
+	padding: 0 4px;
+	font-family: "Karla";
+	font-size: 15px;
 }
 
 button:focus, button:active, button:hover {
-	background-color: rgb(255,255,255);
+	background-color: rgba(132,167,191,0.7);
 	color: #000000;
 	outline-style: none;
 }

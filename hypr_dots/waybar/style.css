@@ -1,31 +1,37 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: "Symbols Nerd Font","Inter 18pt";
+    font-family: "Symbols Nerd Font","Karla";
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     min-height: 0;
 }
 
 window#waybar{
-    background-color: rgba(0, 0, 0, 0.68);
-    color: #ffffff;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #workspaces button{
-    color: #ffffff;
-    margin: 0 1px;
-    padding-top: 0px;
-    padding-bottom: 4px;
+    color: #fff;
+    margin: 0 2px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+#workspaces button.active{
+	background-color: rgba(132,167,191,0.7);
+	color: #fff;
+	margin: 0 1px;
 }
 
 
 #clock,#wireplumber,#network,#battery,#tray{
-    color: #ffffff;
-    padding-top: 0px;
-    padding-bottom: 4px;
+    color: #fff;
+    padding-top: 2px;
+    padding-bottom: 3px;
     margin: 0 8px;
 }
 

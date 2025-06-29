@@ -1,11 +1,13 @@
-font_family Cousine Nerd Font Mono
-font_size 12
-window_padding_width 3
-window_margin_width 3
+font_family MesloLGMDZ Nerd Font
+font_size 10
+fallback_family Noto Color Emoji,Symbols Nerd Font
+window_padding_width 5
+window_margin_width 5
+background_opacity 0.95
 
 
 
 # BEGIN_KITTY_THEME
-# Default
+# zenwritten_dark
 include current-theme.conf
 # END_KITTY_THEME

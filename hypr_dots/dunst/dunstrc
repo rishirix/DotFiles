@@ -11,7 +11,7 @@ frame_color = "#eeeeee"
 gap_size = 4
 
 separator_color = frame
-font = "Inter 18pt"
+font = "Karla"
 line_height = 5
 
 format = "<b>%s</b>\n%b"
