@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=sh -c $HOME/.fehbg
+Name=feh
+Type=Application

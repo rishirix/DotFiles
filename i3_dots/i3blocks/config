@@ -1,0 +1,21 @@
+# i3blocks config: ~/.config/i3blocks/config
+
+# Volume
+[volume]
+command=~/.config/i3blocks/volume.sh
+interval=1
+signal=1
+
+
+# Battery
+[battery]
+command=~/.config/i3blocks/battery.sh
+interval=10
+
+
+# Time
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+
+
