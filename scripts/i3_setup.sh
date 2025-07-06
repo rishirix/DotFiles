@@ -192,6 +192,18 @@ xdg-user-dirs-update
 sudo cp -r "$HOME/dotfiles/wallpaper.png" "$HOME/Pictures/wallpaper.png"
 feh --bg-scale "$HOME/Pictures/wallpaper.png"
 
+sudo mkinitcpio -P
+sleep 5
+sudo bootctl update
+export ESP_PATH=/boot
+sudo sbctl create-keys
+sudo sbctl enroll-keys -m
+sudo sbctl verify
+sudo sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
+sudo sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
+sudo sbctl sign -s /boot/vmlinuz-linux-zen
+sudo sbctl sign -s /boot/vmlinuz-linux-lts
+
 sleep 5
 
 reboot
