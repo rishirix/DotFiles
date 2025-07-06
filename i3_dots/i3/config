@@ -2,7 +2,7 @@
 set $mod Mod4
 set $altmode Mod1
 set $refresh_i3status pkill -RTMIN+1 i3blocks
-set $lock_mod i3lock -n --image=$HOME/Pictures/wallhaven-d5or6o_1920x1080.png
+set $lock_mod i3lock -n --image=$HOME/Pictures/wallpaper.png
 
 #Font
 font pango:Inter Medium 10

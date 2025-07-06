@@ -188,6 +188,10 @@ sudo modprobe -aV btusb
 
 yay -Sc --noconfirm
 
+xdg-user-dirs-update
+sudo cp -r "$HOME/dotfiles/wallpaper.png" "$HOME/Pictures/wallpaper.png"
+feh --bg-scale "$HOME/Pictures/wallpaper.png"
+
 sleep 5
 
 reboot
