@@ -5,17 +5,20 @@ sudo pacman -S figlet --noconfirm
 echo "i3 Setup" | figlet
 
 echo "starting install script"
-echo "# Installing Applications"
+echo "# Installing Applications" | figlet
 
-sudo pacman -Syu --noconfirm vlc xdg-user-dirs xdg-utils xdg-desktop-portal xdg-desktop-portal-gtk curl wget speech-dispatcher nvidia-open-dkms nvidia-settings nvidia-utils i3 rofi picom autotiling kitty firefox chromium lsp-plugins calf easyeffects pipewire-alsa pipewire-audio pipewire-pulse blueman bluez bluez-utils bluez-tools bluez-deprecated-tools xorg brightnessctl playerctl unrar unzip zip plocate thermald tlp gdu udiskie udisks2 pcmanfm-gtk3 lxappearance-gtk3 yazi ttf-inconsolata-nerd inter-font gtk-engine-murrine gnome-themes-extra polkit poppler noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra network-manager-applet flameshot go feh fastfetch flatpak dunst sbctl terminus-font ntp reflector papirus-icon-theme bash-completion xss dex 
+sudo pacman -Syu --noconfirm vlc xdg-user-dirs xdg-utils xdg-desktop-portal xdg-desktop-portal-gtk curl wget speech-dispatcher nvidia-open-dkms nvidia-settings nvidia-utils i3 rofi picom autotiling kitty firefox chromium lsp-plugins calf easyeffects pipewire-alsa pipewire-audio pipewire-pulse blueman bluez bluez-utils bluez-tools bluez-deprecated-tools xorg brightnessctl playerctl unrar unzip zip plocate thermald tlp gdu udiskie udisks2 pcmanfm-gtk3 lxappearance-gtk3 yazi ttf-inconsolata-nerd inter-font gtk-engine-murrine gnome-themes-extra polkit poppler noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra network-manager-applet flameshot go feh fastfetch flatpak dunst sbctl terminus-font ntp reflector papirus-icon-theme bash-completion xss dex
 
-git clone https://aur.archlinux.org/yay;cd yay/;makepkg -si;cd
+git clone https://aur.archlinux.org/yay.git "$HOME/yay"
+cd "$HOME/yay/" && makepkg -si && cd ..
 
-yay -S --confirm zen-browser-bin google-chrome visual-studio-code-bin pwvucontrol 
-sudo pacman -R firefox chromium
+yay -Sc --noconfirm
+
+yay -S --noconfirm zen-browser-bin google-chrome visual-studio-code-bin pwvucontrol 
+sudo pacman -R --noconfirm firefox chromium
 
 echo "Finished Installing Applications"
-echo "Starting Config creation"
+echo "Starting Config creation" | figlet
 
 echo "Xcursor.theme:Simp1e-Dark
 Xcursor.size:18
@@ -28,7 +31,8 @@ Xft.font: Inter-11" >> $HOME/.Xresources
 
 xrdb -merge .Xresources
 
-echo "Section "InputClass"
+cat <<EOF > "$HOME/40-libinput.conf" 
+"Section "InputClass"
         Identifier "libinput pointer catchall"
         MatchIsPointer "on"
         MatchDevicePath "/dev/input/event*"
@@ -66,10 +70,13 @@ Section "InputClass"
         MatchIsTablet "on"
         MatchDevicePath "/dev/input/event*"
         Driver "libinput"
-EndSection" >> $HOME/40-libinput.conf
-sudo mv -r $HOME/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+EndSection"
+EOF
 
-echo "Section "ServerLayout"
+sudo mv "$HOME/40-libinput.conf" /etc/X11/xorg.conf.d/40-libinput.conf
+
+cat <<EOF > "$HOME/10-nvidia.conf" 
+"Section "ServerLayout"
     Identifier     "Layout0"
     Screen      0  "Screen0" 0 0
     InputDevice    "Keyboard0" "CoreKeyboard"
@@ -127,7 +134,28 @@ Section "Screen"
     SubSection     "Display"
         Depth       24
     EndSubSection
-EndSection" >> $HOME/10-nvidia.conf
-sudo mv -r $HOME/10-nvidia.conf /etc/X11/xorg.conf.d/10-nvidia.conf
+EndSection"
+EOF
 
+sudo mv "$HOME/10-nvidia.conf" /etc/X11/xorg.conf.d/10-nvidia.conf
 
+echo "copying configs" | figlet
+
+parent_dir="$HOME/.config"
+dirs=("i3" "i3blocks" "kitty" "nvtop" "btop" "dunst" "autostart" "easyeffects" "fastfetch" "rofi")
+
+mkdir -p "$parent_dir"
+for dir in "${dirs[@]}"; do
+	mkdir -p "$parent_dir/$dir"
+done
+
+cp -r $HOME/dotfiles/i3_dots/* $HOME/.config/
+sudo cp -r $HOME/dotfiles/tlp.conf /etc/tlp.conf
+
+echo "enabling services" | figlet
+
+sudo systemctl enable --now thermald tlp bluetooth
+sudo modprobe -aV btusb
+
+echo "Log generated" | figlet
+exec > >(tee -i "$HOME/i3_setup.log") 2>&1

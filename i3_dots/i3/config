@@ -5,7 +5,7 @@ set $refresh_i3status pkill -RTMIN+1 i3blocks
 set $lock_mod i3lock -n --image=$HOME/Pictures/wallhaven-d5or6o_1920x1080.png
 
 #Font
-font pango:Inter Display Bold 10
+font pango:Inter Medium 10
 
 #Autostart Services/Applications
 exec --no-startup-id dex --autostart --environment i3
@@ -130,7 +130,7 @@ bindsym $altmode+r mode "resize"
 # i3bar/i3blocks
 bar {
         status_command i3blocks
-        font pango:Inter Display Bold 10
+        font pango:Inter Medium 10
 	position top
 	separator_symbol "/"
 	workspace_min_width 30
