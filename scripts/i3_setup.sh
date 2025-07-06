@@ -1,38 +1,65 @@
 #!/bin/bash
 
+#Reflector setup
+cat <<EOF > "$HOME/reflector.conf"
+--save /etc/pacman.d/mirrorlist
+--protocol https
+--country India,Singapore
+--fastest 20
+EOF
+sudo mv "$HOME/reflector.conf" /etc/xdg/reflector/reflector.conf
+sudo systemctl restart reflector
+
+sleep 5
+
+#Timesetup
+sudo ntpd -gq
+sudo systemctl disable systemd-timesyncd
+
+sleep 5
+
+#Initialize setup
+
 sudo pacman -S figlet --noconfirm
-
 echo "i3 Setup" | figlet
-
 echo "starting install script"
-echo "# Installing Applications" | figlet
+echo "# Installing Applications"
 
-sudo pacman -Syu --noconfirm vlc xdg-user-dirs xdg-utils xdg-desktop-portal xdg-desktop-portal-gtk curl wget speech-dispatcher nvidia-open-dkms nvidia-settings nvidia-utils i3 rofi picom autotiling kitty firefox chromium lsp-plugins calf easyeffects pipewire-alsa pipewire-audio pipewire-pulse blueman bluez bluez-utils bluez-tools bluez-deprecated-tools xorg brightnessctl playerctl unrar unzip zip plocate thermald tlp gdu udiskie udisks2 pcmanfm-gtk3 lxappearance-gtk3 yazi ttf-inconsolata-nerd inter-font gtk-engine-murrine gnome-themes-extra polkit poppler noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra network-manager-applet flameshot go feh fastfetch flatpak dunst sbctl terminus-font ntp reflector papirus-icon-theme bash-completion xss dex
+sudo pacman -Syu --noconfirm vlc xcursor-vanilla-dmz-aa sddm xdg-user-dirs xdg-utils xdg-desktop-portal xdg-desktop-portal-gtk curl wget speech-dispatcher nvidia-open-dkms nvidia-settings nvidia-utils i3 rofi picom autotiling kitty firefox chromium lsp-plugins calf easyeffects pipewire-alsa pipewire-audio pipewire-pulse blueman bluez bluez-utils bluez-tools bluez-deprecated-tools xorg brightnessctl playerctl unrar unzip zip plocate thermald tlp gdu udiskie udisks2 pcmanfm-gtk3 lxappearance-gtk3 yazi ttf-inconsolata-nerd inter-font gtk-engine-murrine gnome-themes-extra polkit poppler noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra network-manager-applet flameshot go feh fastfetch flatpak dunst sbctl terminus-font ntp reflector papirus-icon-theme bash-completion xss-lock dex
 
 git clone https://aur.archlinux.org/yay.git "$HOME/yay"
 cd "$HOME/yay/" && makepkg -si && cd ..
 
-yay -Sc --noconfirm
+yay -S --noconfirm sddm-sugar-candy google-chrome visual-studio-code-bin pwvucontrol 
+sudo pacman -R --noconfirm chromium
 
-yay -S --noconfirm zen-browser-bin google-chrome visual-studio-code-bin pwvucontrol 
-sudo pacman -R --noconfirm firefox chromium
+sleep 5
+
+#SDDM Config
+cat <<EOF > "$HOME/sddm.conf"
+[Theme]
+Current=sugar-candy
+EOF
+sudo mv "$HOME/sddm.conf" /etc/sddm.conf
+
+#Installing Apps
 
 echo "Finished Installing Applications"
-echo "Starting Config creation" | figlet
+echo "Starting Config creation"
 
-echo "Xcursor.theme:Simp1e-Dark
+echo "Xcursor.theme:Vanilla-DMZ-AA
 Xcursor.size:18
 Xft.dpi:100
 Xft.antialias: true
 Xft.rgba: rgb
 Xft.hinting: true
 Xft.hintstyle: hintfull
-Xft.font: Inter-11" >> $HOME/.Xresources
+Xft.font: Adwaita Sans-11" >> $HOME/.Xresources
 
 xrdb -merge .Xresources
 
 cat <<EOF > "$HOME/40-libinput.conf" 
-"Section "InputClass"
+Section "InputClass"
         Identifier "libinput pointer catchall"
         MatchIsPointer "on"
         MatchDevicePath "/dev/input/event*"
@@ -70,13 +97,14 @@ Section "InputClass"
         MatchIsTablet "on"
         MatchDevicePath "/dev/input/event*"
         Driver "libinput"
-EndSection"
+EndSection
 EOF
-
 sudo mv "$HOME/40-libinput.conf" /etc/X11/xorg.conf.d/40-libinput.conf
 
+
+
 cat <<EOF > "$HOME/10-nvidia.conf" 
-"Section "ServerLayout"
+Section "ServerLayout"
     Identifier     "Layout0"
     Screen      0  "Screen0" 0 0
     InputDevice    "Keyboard0" "CoreKeyboard"
@@ -134,12 +162,13 @@ Section "Screen"
     SubSection     "Display"
         Depth       24
     EndSubSection
-EndSection"
+EndSection
 EOF
-
 sudo mv "$HOME/10-nvidia.conf" /etc/X11/xorg.conf.d/10-nvidia.conf
 
-echo "copying configs" | figlet
+
+#CONFIG
+echo "copying configs"
 
 parent_dir="$HOME/.config"
 dirs=("i3" "i3blocks" "kitty" "nvtop" "btop" "dunst" "autostart" "easyeffects" "fastfetch" "rofi")
@@ -152,10 +181,13 @@ done
 cp -r $HOME/dotfiles/i3_dots/* $HOME/.config/
 sudo cp -r $HOME/dotfiles/tlp.conf /etc/tlp.conf
 
-echo "enabling services" | figlet
-
-sudo systemctl enable --now thermald tlp bluetooth
+echo "enabling services"
+#Services
+sudo systemctl enable thermald tlp bluetooth sddm
 sudo modprobe -aV btusb
 
-echo "Log generated" | figlet
-exec > >(tee -i "$HOME/i3_setup.log") 2>&1
+yay -Sc --noconfirm
+
+sleep 5
+
+reboot
