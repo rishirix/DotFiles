@@ -1,11 +1,11 @@
 {
-    "position": "top",
+    "position": "bottom",
     "width": 1920,
     "height": 25,
     "margin-top": 0,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray","wireplumber","network","battery"],
+    "modules-right": ["tray","wireplumber","battery"],
 
     //Modules Configuration
     "hyprland/workspaces":{
@@ -19,7 +19,8 @@
             "6": "6",
             "7": "7",
             "8": "8",
-            "9": "9"
+            "9": "9",
+            "10": "10"
         }
     },
     "clock": {
@@ -54,6 +55,6 @@
         "tooltip-format": "{volume}%"
     },
     "tray":{
-        "spacing": 5
+        "spacing": 10
     }
 }
