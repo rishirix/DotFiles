@@ -1,4 +1,5 @@
 set number
+set termguicolors
 set relativenumber
 set tabstop=4
 set shiftwidth=4
@@ -18,13 +19,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 let NERDTreeShowHidden=1
-let g:airline_theme='angr'
-colorscheme habamax
+let g:airline_theme='distinguished'
+colorscheme distill
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

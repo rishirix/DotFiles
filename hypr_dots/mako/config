@@ -10,7 +10,7 @@ icons=0
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=1
-font=Inter 12
+font=Adwaita Sans 12
 
 [urgency=low]
 border-color=#cccccc

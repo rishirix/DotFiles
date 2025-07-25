@@ -29,12 +29,12 @@
         "tooltip": false
     },
     "battery": {
-        "format": "{icon}",
-        "format-charging": "󱐌",
-        "format-plugged": "",
+        "format": "BAT {capacity}%",
+        "format-charging": "CHG {capacity}%",
+        "format-plugged": "PLUGGED",
         "format-alt": "{time}",
 	    "interval" : 5,
-        "format-icons": ["","","","",""],
+        //"format-icons": ["","","","",""],
         "tooltip": true,
         "tooltip-format": "{capacity}%"
     },
@@ -47,9 +47,9 @@
         "on-click": "iwgtk"
     },
     "wireplumber": {
-        "format": "{icon}",
-        "format-muted": "󰓄",
-        "format-icons": ["󰓃"],
+        "format": "VOL {volume}%",
+        "format-muted": "MUTE",
+        //"format-icons": ["󰓃"],
         "on-click": "pwvucontrol",
         "tooltip": true,
         "tooltip-format": "{volume}%"
