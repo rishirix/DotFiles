@@ -1,14 +1,14 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: "Symbols Nerd Font","Adwaita Sans";
+    font-family: "Symbols Nerd Font","Roboto";
     font-size: 14px;
     font-weight: 600;
     min-height: 0;
 }
 
 window#waybar{
-    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
     color:  #ffffff;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -22,14 +22,14 @@ window#waybar{
 }
 
 #workspaces button.active{
-	background-color:  #ffffff;
+	background-color:  #fff;
 	color: #2e3440;
 	margin: 0 1px;
 }
 
 
 #clock,#wireplumber,#network,#battery,#tray{
-    color:  #ffffff;
+    color:  #fff;
     padding-top: 2px;
     padding-bottom: 3px;
     margin: 0 8px;

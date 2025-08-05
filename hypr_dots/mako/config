@@ -10,7 +10,7 @@ icons=0
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=1
-font=Adwaita Sans 12
+font=Roboto 12
 
 [urgency=low]
 border-color=#cccccc
