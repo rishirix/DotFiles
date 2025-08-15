@@ -1,4 +1,6 @@
 
 //@theme "/home/rishi/.local/share/rofi/themes/squared-nord.rasi"
 
-@theme "/home/rishi/.local/share/rofi/themes/mono.rasi"
+//@theme "/home/rishi/.local/share/rofi/themes/mono.rasi"
+
+@theme "/home/rsx/.local/share/rofi/themes/squared-nord.rasi"
